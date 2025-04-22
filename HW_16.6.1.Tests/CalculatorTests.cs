@@ -30,4 +30,11 @@ public class CalculatorTests
         var calculator = new Calculator();
         Assert.NotNull(calculator.Division(10, 2));
     }
+
+    [Test]
+    public void Division_MustThrowException()
+    {
+        var calculator = new Calculator();
+        Assert.Throws<DivideByZeroException>(() => calculator.Division(30, 0));
+    }
 }
